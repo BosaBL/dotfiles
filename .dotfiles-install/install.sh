@@ -20,6 +20,7 @@ if ["$nvidiaFlag" == "Y"]; then
 fi
 
 source ./modules/packages.sh
+source ./modules/kdeconnect.sh
 source ./modules/multimedia.sh
 
 mkdir -p $HOME/Downloads/tmp
