@@ -19,7 +19,6 @@ if ["$nvidiaFlag" == "Y"]; then
     source ./modules/nvidia.sh
 fi
 
-source ./modules/nvidia.sh
 source ./modules/packages.sh
 source ./modules/rust.sh
 
