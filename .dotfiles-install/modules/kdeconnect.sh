@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 packageInstall "kde-connect"
 
 # Enable firewall rules

@@ -1,4 +1,5 @@
-#!bin/bash
+#!/usr/bin/env bash
+
 cd $HOME/Downloads/tmp
 
 git clone --bare https://bitbucket.org/durdn/cfg.git $HOME/.cfg

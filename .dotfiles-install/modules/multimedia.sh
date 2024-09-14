@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 sudo dnf -y swap 'ffmpeg-free' 'ffmpeg' --allowerasing
 sudo dnf -y group install Multimedia
