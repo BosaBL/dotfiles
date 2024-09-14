@@ -20,7 +20,7 @@ if ["$nvidiaFlag" == "Y"]; then
 fi
 
 source ./modules/packages.sh
-source ./modules/rust.sh
+source ./modules/multimedia.sh
 
 mkdir -p $HOME/Downloads/tmp
 # These just need to be executed, they are standalone script
