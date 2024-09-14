@@ -24,7 +24,6 @@ source ./modules/packages.sh
 source ./modules/rust.sh
 
 mkdir -p $HOME/Downloads/tmp
-cd $HOME/Downloads/tmp
 # These just need to be executed, they are standalone script
 ./modules/ngwlook.sh
 ./modules/themes.sh
