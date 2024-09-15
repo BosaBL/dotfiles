@@ -6,8 +6,6 @@ fi
 
 swww-daemon
 
-nwg-look -a
-
 kvantummanager --set OrchisDark
 swww img $HOME/Pictures/Wallpapers/background.png
 
