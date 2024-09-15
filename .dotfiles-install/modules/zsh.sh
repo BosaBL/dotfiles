@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-installPackage "zsh"
-
+sudo dnf -y install "zsh"
 
 # oh-my-zsh
 echo "Installing oh-my-zsh"
