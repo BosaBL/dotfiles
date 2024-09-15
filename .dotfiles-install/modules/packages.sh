@@ -50,16 +50,17 @@ packages=(
     gtk3-devel
     cairo-devel
     glib-devel
+    kwallet
+    pam-kwallet
     gnome-themes-extra
     gtk-murrine-engine
     sassc
     dolphin
     okular
-    # xdg-desktop-portal-gtk
+    xdg-desktop-portal-gtk
     neovim
-    brave-browser
-    pam-kwallet
     rofi-wayland
+    brave-browser
 )
 
 
