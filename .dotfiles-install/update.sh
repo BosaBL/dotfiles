@@ -7,15 +7,15 @@ while true; do
   esac
 done
 
+function config {
+  /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"
+}
+
 if ! config pull; then
   echo "Pulling config"
   config reset --hard HEAD
   config pull
 fi
-
-function config {
-  /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"
-}
 
 if ! config checkout; then
   echo "Backing up pre-existing dot files."
