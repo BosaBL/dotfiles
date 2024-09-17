@@ -22,6 +22,7 @@ source ./modules/packages.sh
 source ./modules/kdeconnect.sh
 source ./modules/sddm.sh
 source ./modules/multimedia.sh
+source ./modules/zsh.sh
 
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit
@@ -29,8 +30,6 @@ cd "$TMP_DIR" || exit
 # These need a new shell instance
 echo "Ngw-look"
 ./modules/ngwlook.sh
-echo "Installing ZSH"
-./modules/zsh.sh
 echo "Installing Themes"
 ./modules/themes.sh
 echo "Installing Fonts"
