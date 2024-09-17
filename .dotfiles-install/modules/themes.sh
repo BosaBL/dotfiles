@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 
-cd $HOME/Downloads/tmp
-
 git clone https://github.com/vinceliuice/Orchis-kde
 git clone https://github.com/vinceliuice/Orchis-theme
 git clone https://github.com/vinceliuice/Tela-circle-icon-theme
 
-cd Orchis-kde
+cd Orchis-kde || exit
 ./install.sh
 
 cd ..
-cd Orchis-theme
+cd Orchis-theme || exit
 ./install.sh
 
 cd ..
-cd Tela-circle-icon-theme
+cd Tela-circle-icon-theme || exit
 ./install.sh blue
