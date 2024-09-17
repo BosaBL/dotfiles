@@ -60,12 +60,12 @@ packages=(
   xdg-desktop-portal-gtk
   haruna
   neovim
-  @fonts
   rofi-wayland
   brave-browser
 )
 
 installPackages "${packages[@]}"
+sudo dnf -y install @fonts
 
 echo "Installing pyenv"
 curl https://pyenv.run | bash
