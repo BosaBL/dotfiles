@@ -11,14 +11,13 @@ config core.sparsecheckout true
 # Do not checkout README.md
 echo README.md >>.git/info/sparse-checkout
 
-if config checkout; then
-  echo "Dotfiles Installed"
-else
+if ! config checkout; then
   echo "Backing up pre-existing dot files."
   mkdir -p .config-backup
   config checkout 2>&1 | grep -E "\s+\." | awk '{print $1}' | xargs -I{} mv {} .config-backup/{}
-  config checkout --force
 fi
+
+config checkout --force
 
 config config status.showUntrackedFiles no
 echo "Dotfiles Installed"
