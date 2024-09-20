@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trap 'exit 130' INT
+
 LOG_FILE="install-$(date +%d-%H%M%S).log"
 TMP_DIR="$HOME/Downloads/tmp"
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
@@ -7,13 +9,14 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 chmod +x "$SCRIPT_DIR"/helpers.sh
 chmod +x "$SCRIPT_DIR"/modules/*
 
+source "$SCRIPT_DIR"/helpers.sh
+
 nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 
 echo "Appending DNF parallel downloads"
 grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
 
-source "$SCRIPT_DIR"/helpers.sh
 source "$SCRIPT_DIR"/modules/rpmfusion-copr.sh
 
 if [ "$nvidiaFlag" == "Y" ]; then
