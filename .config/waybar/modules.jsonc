@@ -314,7 +314,7 @@
   "custom/updates": {
     "exec": "$HOME/.config/hypr/scripts/checkupdates.sh", // <--- path to script
     "on-click-right": "$HOME/.config/hypr/scripts/checkupdates.sh", // refresh on right click
-    "on-click-middle": "hyprctl dispatch exec kitty sudo dnf update", // update on middle click
+    "on-click-middle": "hyprctl dispatch exec kitty 'sudo dnf update && sleep 1'", // update on middle click
     "interval": 900, // refresh every 15 minutes
     "return-type": "json",
     "format": "{icon}",
