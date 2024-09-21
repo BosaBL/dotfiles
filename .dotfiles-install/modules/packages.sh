@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 packages=(
+  ripgrep
   curl
   golang
   python3
