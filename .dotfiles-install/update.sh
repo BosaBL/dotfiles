@@ -7,6 +7,8 @@ while true; do
   esac
 done
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
 function config {
   /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"
 }
@@ -29,10 +31,10 @@ config checkout --force
 echo "Dotfiles updated"
 echo "Checking for new packages"
 
-source ./helpers.sh
-source ./modules/packages.sh
-source ./modules/sddm.sh
-source ./modules/multimedia.sh
-source ./modules/zsh.sh
+source "$SCRIPT_DIR"/helpers.sh
+source "$SCRIPT_DIR"/modules/packages.sh
+source "$SCRIPT_DIR"/modules/sddm.sh
+source "$SCRIPT_DIR"/modules/multimedia.sh
+source "$SCRIPT_DIR"/modules/zsh.sh
 
 echo "Update finished"
