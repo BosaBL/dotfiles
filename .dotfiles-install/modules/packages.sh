@@ -24,6 +24,7 @@ packages=(
   waybar
   swww
   hyprpicker
+  hyprshot
   kvantum
   network-manager-applet
   openssl
