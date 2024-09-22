@@ -22,6 +22,10 @@ if [[ -z $selected ]]; then
 fi
 
 # Change Wallpaper
+mkdir -p "$HOME"/.cache/dotfiles
+
+cp "$IMG_PATH/$selected" "$HOME"/.cache/dotfiles/background
+
 swww img "$IMG_PATH/$selected"
 
 # Change SDDM theme
