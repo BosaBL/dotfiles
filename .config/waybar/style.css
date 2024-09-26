@@ -170,6 +170,10 @@ tooltip {
   color: #c0caf5;
 }
 
+#netwrok {
+  min-width: 190px;
+}
+
 #mpris,
 #custom-updates {
   color: #bb9af7;

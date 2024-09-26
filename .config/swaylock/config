@@ -23,6 +23,8 @@ caps-lock-bs-hl-color=ff9e64
 caps-lock-key-hl-color=bb9af7
 key-hl-color=bb9af7
 
+fade-in=3
+
 ring-wrong-color=f7768e
 ring-ver-color=9ece6a
 
