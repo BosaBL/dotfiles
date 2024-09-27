@@ -103,7 +103,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 autoload -Uz compinit && compinit
-plugins=(vi-mode fzf-tab git zsh-autosuggestions zsh-syntax-highlighting sudo python copypath copyfile gitignore)
+plugins=(vi-mode fzf-tab git zsh-autosuggestions zsh-syntax-highlighting sudo python copypath copyfile gitignore aliases)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
