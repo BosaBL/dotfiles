@@ -20,6 +20,7 @@ types = require("luasnip.util.types")
 conds = require("luasnip.extras.conditions")
 conds_expand = require("luasnip.extras.conditions.expand")
 
+test = "#FFFF00"
 function M.get_ISO_8601_date()
 	return os.date("%Y-%m-%d")
 end
