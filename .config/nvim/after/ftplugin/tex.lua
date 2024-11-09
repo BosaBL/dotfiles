@@ -1,2 +1,2 @@
-vim.opt_local.spelllang = { "es", "en" }
+vim.opt_local.spelllang = { "es" }
 vim.opt_local.spell = true
