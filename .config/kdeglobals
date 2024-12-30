@@ -7,3 +7,6 @@ ShowDeleteCommand=false
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
+
+[UiSettings] 
+ColorScheme=Orchis-dark
