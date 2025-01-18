@@ -27,11 +27,13 @@ echo "Dotfiles Installed"
 export DF_SCRIPT_DIR="$HOME/.dotfiles-install"
 export DF_LOG_DIR="$HOME/.dotfiles-install/logs"
 export DF_TMP_DIR="/tmp/dotfiles-install"
+
+mkdir -p "$DF_TMP_DIR" || exit 1
+mkdir -p "$DF_LOG_DIR" || exit 1
+touch "$DF_LOG_FILE" || exit 1
+
 DF_LOG_FILE="$DF_LOG_DIR/install-$(date +%d-%H%M%S).log"
 export DF_LOG_FILE
-
-touch "$DF_LOG_FILE" || exit 1
-mkdir -p "$TMP_DIR" && cd "$TMP_DIR" || exit 1
 
 chmod +x "$DF_SCRIPT_DIR"/helpers.sh
 chmod +x "$DF_SCRIPT_DIR"/modules/*
