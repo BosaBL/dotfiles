@@ -2,14 +2,19 @@
 
 trap 'exit 130' INT
 
-LOG_FILE="install-$(date +%d-%H%M%S).log"
-TMP_DIR="$HOME/Downloads/tmp"
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+"$DF_SCRIPT_DIR"/modules/installdotfiles.sh
 
-chmod +x "$SCRIPT_DIR"/helpers.sh
-chmod +x "$SCRIPT_DIR"/modules/*
+export DF_SCRIPT_DIR="$HOME/.dotfiles-install"
+export DF_LOG_DIR="$HOME/.dotfiles-install/logs"
+export DF_TMP_DIR="/tmp/dotfiles-install"
+DF_LOG_FILE="$DF_LOG_DIR/install-$(date +%d-%H%M%S).log"
+export DF_LOG_FILE
 
-source "$SCRIPT_DIR"/helpers.sh
+touch DF_LOG_FILE || exit 1
+mkdir -p TMP_DIR && cd TMP_DIR || exit 1
+
+chmod +x "$DF_SCRIPT_DIR"/helpers.sh
+chmod +x "$DF_SCRIPT_DIR"/modules/*
 
 nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
@@ -17,32 +22,31 @@ yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 echo "Appending DNF parallel downloads"
 grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
 
-source "$SCRIPT_DIR"/modules/rpmfusion-copr.sh
+"$DF_SCRIPT_DIR"/modules/rpmfusion-copr.sh
 
 if [ "$nvidiaFlag" == "Y" ]; then
-  source "$SCRIPT_DIR"/modules/nvidia.sh
+  source "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
 
-source "$SCRIPT_DIR"/modules/packages.sh
-source "$SCRIPT_DIR"/modules/kdeconnect.sh
-source "$SCRIPT_DIR"/modules/sddm.sh
-source "$SCRIPT_DIR"/modules/multimedia.sh
-source "$SCRIPT_DIR"/modules/zsh.sh
+/modules/packages.sh
+/modules/kdeconnect.sh
+/modules/sddm.sh
+/modules/multimedia.sh
+/modules/zsh.sh
 
-mkdir -p "$TMP_DIR"
-cd "$TMP_DIR" || exit
-
-# These need a new shell instance
 echo "Installing Themes"
-"$SCRIPT_DIR"/modules/themes.sh
+"$DF_SCRIPT_DIR"/modules/themes.sh
 echo "Installing Fonts"
-"$SCRIPT_DIR"/modules/nerdfonts.sh
-echo "Installing Dotfiles"
-"$SCRIPT_DIR"/modules/installdotfiles.sh
+"$DF_SCRIPT_DIR"/modules/nerdfonts.sh
 
 echo "Installing Ngw-look"
-"$SCRIPT_DIR"/modules/ngwlook.sh
+"$DF_SCRIPT_DIR"/modules/ngwlook.sh
 
-cd "$HOME" || exit
-rm -rfd "$TMP_DIR"
+rm -rfd "$DF_TMP_DIR"
 echo "Cleaning up"
+
+restartFlag=""
+yes_or_no "Full restart is recommended, would you to?" restartFlag
+if [ "$restartFlag" == "Y" ]; then
+  sudo systemctl reboot
+fi

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-LOG_FILE="install-$(date +%d-%H%M%S).log"
-
 # Reset
 Color_Off='\033[0m' # Text Reset
 
@@ -85,7 +83,7 @@ PKG_REMV_ERROR="${BIRed}[PKG_REMV_ERROR]${Color_Off}"
 PKG_REMV_SUCCESS="${BIGreen}[PKG_REMV_SUCCESS]${Color_Off}"
 
 log() {
-  echo "$1" >>"$LOG_FILE"
+  echo "$1" >>"$DF_LOG_FILE"
 }
 
 installPackage() {

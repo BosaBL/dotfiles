@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$DF_SCRIPT_DIR/helpers.sh"
+
 packages=(
   ripgrep
   curl
@@ -71,6 +73,7 @@ packages=(
   ibm-plex-fonts-all
   swaylock-effects
   brave-browser
+  swappy
 )
 
 installPackages "${packages[@]}"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$DF_SCRIPT_DIR/helpers.sh"
+
 sudo dnf -y install "zsh"
 
 # oh-my-zsh
