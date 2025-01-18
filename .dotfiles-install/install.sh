@@ -51,11 +51,11 @@ if [ "$nvidiaFlag" == "Y" ]; then
   source "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
 
-/modules/packages.sh
-/modules/kdeconnect.sh
-/modules/sddm.sh
-/modules/multimedia.sh
-/modules/zsh.sh
+"$DF_SCRIPT_DIR"/modules/packages.sh
+"$DF_SCRIPT_DIR"/modules/kdeconnect.sh
+"$DF_SCRIPT_DIR"/modules/sddm.sh
+"$DF_SCRIPT_DIR"/modules/multimedia.sh
+"$DF_SCRIPT_DIR"/modules/zsh.sh
 
 echo "Installing Themes"
 "$DF_SCRIPT_DIR"/modules/themes.sh
