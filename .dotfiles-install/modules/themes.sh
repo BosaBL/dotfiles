@@ -12,7 +12,7 @@ sudo cp -r "$HOME"/.local/share/icons/Bibata/ /usr/share/icons/
 
 echo "Installing themes"
 
-cd DF_TMP_DIR || exit 1
+cd "$DF_TMP_DIR" || exit 1
 
 git clone https://github.com/vinceliuice/Orchis-kde
 git clone https://github.com/vinceliuice/Orchis-theme
