@@ -1,3 +1,4 @@
+*.logs
 *.log
 *.install-flag
 *.initial-flag

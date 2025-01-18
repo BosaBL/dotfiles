@@ -13,6 +13,8 @@ grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_do
 
 "$DF_SCRIPT_DIR"/modules/rpmfusion-copr.sh
 
+mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
+
 if [ "$nvidiaFlag" == "Y" ]; then
   source "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
