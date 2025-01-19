@@ -24,7 +24,10 @@ function config {
 config config core.sparsecheckout true
 
 # Do not checkout README.md
-echo README.md >>"$HOME"/.cfg/info/sparse-checkout
+command="/*
+!README.md"
+
+echo "$command" >>"$HOME"/.cfg/info/sparse-checkout
 
 if ! config checkout; then
   echo "Backing up pre-existing dot files."
