@@ -74,6 +74,9 @@ packages=(
   swaylock-effects
   brave-browser
   swappy
+  brave-browser
+  sddm
+  zsh
 )
 
 installPackages "${packages[@]}"

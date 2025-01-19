@@ -115,9 +115,7 @@ removePackage() {
 # params: Expanded list of packages to install i.e.: "${packageList[@]}" or "package1" "package2" ...
 installPackages() {
   local list=("$@")
-  for package in "${list[@]}"; do
-    installPackage "$package"
-  done
+  sudo dnf install -y "${list[@]}"
 }
 
 # params: Expanded list of packages to install i.e.: "${packageList[@]}" or "package1" "package2" ...
