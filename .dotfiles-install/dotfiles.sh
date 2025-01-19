@@ -9,7 +9,7 @@ nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 
 echo "Appending DNF parallel downloads"
-grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | (echo "$DF_SUDO_PW" | sudo tee -a /etc/dnf/dnf.conf) >/dev/null
+grep qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
 
 "$DF_SCRIPT_DIR"/modules/rpmfusion-copr.sh
 
