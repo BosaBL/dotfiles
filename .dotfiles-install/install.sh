@@ -45,9 +45,9 @@ config checkout --force
 
 # Check for nvidia driver successful instalation and then suggest to restart
 echo "Checking for successful nvidia driver installation..."
-while 1; do
+while true; do
   sleep 1
-  if modinfo -F version nvidia; then
+  if ! modinfo -F version nvidia; then
     continue
   fi
   echo "Nvidia driver has been successfully installed."
