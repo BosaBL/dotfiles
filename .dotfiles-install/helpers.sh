@@ -87,13 +87,13 @@ log() {
 }
 
 installPackage() {
-  if sudo dnf list --installed "$1" &>/dev/null; then
+  if yay -Q "$1" &>/dev/null; then
     echo -e "${PKG_ALREADY_INSTALLED} Package $1 is already installed"
     log "[PKG_ALREADY_INSTALLED] Package $1 is already installed"
     return
   fi
 
-  if sudo dnf install "$1" -y 2>/dev/null; then
+  if yay -S --noconfirm "$1" 2>/dev/null; then
     echo -e "${PKG_INST_SUCCESS} Package $1 installed"
     log "[PKG_INST_SUCCESS] Package $1 installed"
   else
@@ -103,7 +103,7 @@ installPackage() {
 }
 
 removePackage() {
-  if sudo dnf remove "$1" -y 2>/dev/null; then
+  if yay -R --noconfirm "$1" 2>/dev/null; then
     echo -e "${PKG_REMV_SUCCESS} Package $1 removed"
     log "[PKG_REMV_SUCCESS] Package $1 removed"
   else
@@ -115,7 +115,7 @@ removePackage() {
 # params: Expanded list of packages to install i.e.: "${packageList[@]}" or "package1" "package2" ...
 installPackages() {
   local list=("$@")
-  sudo dnf install -y "${list[@]}"
+  yay -S --noconfirm "${list[@]}"
 }
 
 # params: Expanded list of packages to install i.e.: "${packageList[@]}" or "package1" "package2" ...
