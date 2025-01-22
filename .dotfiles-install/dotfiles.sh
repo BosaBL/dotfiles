@@ -16,13 +16,20 @@ source "$DF_SCRIPT_DIR/helpers.sh"
 
 mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
 
+nvidiaFlag=""
+yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
+
+if [ "$nvidiaFlag" == "Y" ]; then
+  source "$DF_SCRIPT_DIR"/modules/nvidia.sh
+fi
+
+"$DF_SCRIPT_DIR"/modules/yay.sh
 "$DF_SCRIPT_DIR"/modules/packages.sh
-"$DF_SCRIPT_DIR"/modules/kdeconnect.sh
+"$DF_SCRIPT_DIR"/modules/fonts.sh
 "$DF_SCRIPT_DIR"/modules/sddm.sh
 "$DF_SCRIPT_DIR"/modules/multimedia.sh
 "$DF_SCRIPT_DIR"/modules/zsh.sh
 
-echo "Installing Themes"
 "$DF_SCRIPT_DIR"/modules/themes.sh
 
 rm -rfd "$DF_TMP_DIR"
