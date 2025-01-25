@@ -86,6 +86,7 @@ packages=(
   vim
   yt-dlp
   brave-bin
+  sddm
 )
 
 installPackages "${packages[@]}"

@@ -19,11 +19,10 @@ mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
 nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 
+"$DF_SCRIPT_DIR"/modules/yay.sh
 if [ "$nvidiaFlag" == "Y" ]; then
   source "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
-
-"$DF_SCRIPT_DIR"/modules/yay.sh
 "$DF_SCRIPT_DIR"/modules/packages.sh
 "$DF_SCRIPT_DIR"/modules/fonts.sh
 "$DF_SCRIPT_DIR"/modules/sddm.sh
