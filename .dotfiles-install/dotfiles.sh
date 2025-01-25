@@ -12,6 +12,7 @@ touch "$DF_LOG_FILE" || exit 1
 chmod +x "$DF_SCRIPT_DIR"/helpers.sh
 chmod +x "$DF_SCRIPT_DIR"/modules/*
 
+"$DF_SCRIPT_DIR"/modules/yay.sh
 source "$DF_SCRIPT_DIR/helpers.sh"
 
 mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
@@ -19,7 +20,6 @@ mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
 nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 
-"$DF_SCRIPT_DIR"/modules/yay.sh
 if [ "$nvidiaFlag" == "Y" ]; then
   source "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
