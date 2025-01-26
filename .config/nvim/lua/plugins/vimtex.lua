@@ -49,12 +49,6 @@ return {
 					vim.opt_local.wrap = true
 				end,
 			})
-			local augroup = vim.api.nvim_create_augroup("VimtexGroup", { clear = true })
-			vim.api.nvim_create_autocmd("User", {
-				pattern = "VimtexEventCompileSuccess",
-				group = augroup,
-				command = "VimtexView",
-			})
 		end,
 		keys = {
 			{ "<localLeader>l", "", desc = "+vimtext" },
