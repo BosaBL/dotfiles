@@ -2,3 +2,5 @@
 *.log
 *.install-flag
 *.initial-flag
+lazy-lock.json
+lazyvim.json
