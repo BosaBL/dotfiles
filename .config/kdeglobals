@@ -10,3 +10,6 @@ MaximumRemoteSize=0
 
 [UiSettings] 
 ColorScheme=Orchis-dark
+
+[General]
+TerminalApplication=kitty
