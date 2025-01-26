@@ -26,15 +26,14 @@ if [ "$nvidiaFlag" == "Y" ]; then
   "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
 
-if [ "$bluetoothFlag" == "Y" ]; then
-  "$DF_SCRIPT_DIR"/modules/bluetooth.sh
-fi
-
 "$DF_SCRIPT_DIR"/modules/packages.sh
 "$DF_SCRIPT_DIR"/modules/network.sh
 "$DF_SCRIPT_DIR"/modules/fonts.sh
 "$DF_SCRIPT_DIR"/modules/sddm.sh
 "$DF_SCRIPT_DIR"/modules/multimedia.sh
+if [ "$bluetoothFlag" == "Y" ]; then
+  "$DF_SCRIPT_DIR"/modules/bluetooth.sh
+fi
 "$DF_SCRIPT_DIR"/modules/zsh.sh
 "$DF_SCRIPT_DIR"/modules/themes.sh
 
