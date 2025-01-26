@@ -26,10 +26,6 @@ packages=(
   pipewire-pulse
   sof-firmware
   bat
-  #Bluetooth
-  bluez
-  bluez-utils
-  blueman
   #Extras
   neovim
   cliphist
@@ -82,7 +78,6 @@ packages=(
   yt-dlp
   brave-bin
   sddm
-  NetworkManager
   zsh
 )
 

@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
-
 source "$DF_SCRIPT_DIR/helpers.sh"
 
 packages=(
-  gstreamer
+  NetworkManager
 )
 
 installPackages "${packages[@]}"
+
+sudo systemctl enable --now NetworkManager

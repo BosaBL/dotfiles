@@ -15,20 +15,27 @@ chmod +x "$DF_SCRIPT_DIR"/modules/*
 "$DF_SCRIPT_DIR"/modules/yay.sh
 source "$DF_SCRIPT_DIR/helpers.sh"
 
-sudo mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
-
 nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
+bluetoothFlag=""
+yes_or_no "Do you want to enable Bluetooth support?" nvidiaFlag
+
+mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
 
 if [ "$nvidiaFlag" == "Y" ]; then
-  source "$DF_SCRIPT_DIR"/modules/nvidia.sh
+  "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
+
+if [ "$bluetoothFlag" == "Y" ]; then
+  "$DF_SCRIPT_DIR"/modules/bluetooth.sh
+fi
+
 "$DF_SCRIPT_DIR"/modules/packages.sh
+"$DF_SCRIPT_DIR"/modules/network.sh
 "$DF_SCRIPT_DIR"/modules/fonts.sh
 "$DF_SCRIPT_DIR"/modules/sddm.sh
 "$DF_SCRIPT_DIR"/modules/multimedia.sh
 "$DF_SCRIPT_DIR"/modules/zsh.sh
-
 "$DF_SCRIPT_DIR"/modules/themes.sh
 
 rm -rfd "$DF_TMP_DIR"
