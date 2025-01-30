@@ -20,12 +20,13 @@ packages=(
   wireplumber
   grim
   slurp
+  xdg-desktop-portal-gtk
+  archlinux-xdg-menu
   #Pipewire
   pipewire-audio
   pipewire-alsa
   pipewire-pulse
   sof-firmware
-  bat
   #Extras
   neovim
   cliphist
@@ -53,7 +54,6 @@ packages=(
   swappy
   swaync
   swww
-  wallust
   waybar
   wget
   wl-clipboard
@@ -78,7 +78,12 @@ packages=(
   yt-dlp
   brave-bin
   sddm
+  # Terminal
   zsh
+  fzf
+  bat
+  zoxide
+  eza
 )
 
 installPackages "${packages[@]}"
