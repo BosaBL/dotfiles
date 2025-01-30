@@ -8,6 +8,26 @@ function ctrl_c() {
 # Initiate global env vars for the installation script
 export DF_SCRIPT_DIR="$HOME/.dotfiles-install"
 
+yes_or_no() {
+  while true; do
+    read -rp"$1 [Y/n]: " yn
+    case $yn in
+    [Yy]*)
+      eval "$2='Y'"
+      return 0
+      ;;
+    "")
+      eval "$2='Y'"
+      return 0
+      ;;
+    [Nn]*)
+      echo "Skipped"
+      return 1
+      ;;
+    esac
+  done
+}
+
 # Download dotfiles
 git clone --bare https://github.com/bosabl/dotfiles "$HOME/.cfg"
 function config {
@@ -35,3 +55,20 @@ echo "Dotfiles downloaded"
 "$DF_SCRIPT_DIR"/dotfiles.sh
 
 config checkout --force
+
+# Check for nvidia driver successful instalation and then suggest to restart
+echo "Checking for successful nvidia driver installation..."
+while true; do
+  sleep 1
+  if ! modinfo -F version nvidia; then
+    continue
+  fi
+  echo "Nvidia driver has been successfully installed."
+
+  restartFlag=""
+  yes_or_no "Full restart is recommended, would you like to?" restartFlag
+  if [ "$restartFlag" == "Y" ]; then
+    sudo systemctl reboot
+  fi
+  break
+done

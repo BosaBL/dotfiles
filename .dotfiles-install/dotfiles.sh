@@ -39,20 +39,3 @@ fi
 
 rm -rfd "$DF_TMP_DIR"
 echo "Cleaning up"
-
-# Check for nvidia driver successful instalation and then suggest to restart
-echo "Checking for successful nvidia driver installation..."
-while true; do
-  sleep 1
-  if ! modinfo -F version nvidia; then
-    continue
-  fi
-  echo "Nvidia driver has been successfully installed."
-
-  restartFlag=""
-  yes_or_no "Full restart is recommended, would you like to?" restartFlag
-  if [ "$restartFlag" == "Y" ]; then
-    sudo systemctl reboot
-  fi
-  break
-done
