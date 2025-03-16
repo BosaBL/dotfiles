@@ -6,6 +6,7 @@ packages=(
   nvidia-utils
   libva
   libva-nvidia-driver
+  linux-headers
 )
 
 installPackages "${packages[@]}"

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source "$DF_SCRIPT_DIR/helpers.sh"
+sudo pacman -Rsc $(pacman -Qsq '^xdg-desktop-portal*')
 
 packages=(
   #Kde Apps
@@ -13,17 +14,13 @@ packages=(
   unzip
   gtk-engine-murrine
   #Hyprland
-  hyprcursor
-  hyprutils
-  aquamarine
-  hypridle
-  hyprlock
   hyprland
-  pyprland
-  hyprlandqutils
-  #Pipewire
+  xdg-desktop-portal-hyprland
   pipewire
   wireplumber
+  grim
+  slurp
+  #Pipewire
   pipewire-audio
   pipewire-alsa
   pipewire-pulse
@@ -40,14 +37,12 @@ packages=(
   grim
   gvfs
   gvfs-mtp
-  hyprpolkitagent
   imagemagick
   inxi
   jq
   kitty
   kvantum
   nano
-  network-manager-applet
   pamixer
   pavucontrol
   pipewire-alsa
@@ -87,6 +82,8 @@ packages=(
   yt-dlp
   brave-bin
   sddm
+  NetworkManager
+  zsh
 )
 
 installPackages "${packages[@]}"
