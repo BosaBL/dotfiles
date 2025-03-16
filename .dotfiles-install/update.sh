@@ -13,6 +13,10 @@ if ! config pull; then
   config pull
 fi
 
+function config {
+  /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"
+}
+
 if ! config checkout; then
   echo "Backing up pre-existing dot files."
   rm -rfd .config-backup
