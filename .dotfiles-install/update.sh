@@ -1,5 +1,5 @@
 while true; do
-  read -pr "Updating dotfiles will overwrite any local change you have made. Do u want to continue? (y/n)" answer
+  read -rp "Updating dotfiles will overwrite any local change you have made. Do u want to continue? (y/n): " answer
   case $answer in
   [Yy]*) break ;;
   [Nn]*) exit ;;

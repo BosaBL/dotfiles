@@ -143,7 +143,7 @@ removePackages() {
 
 yes_or_no() {
   while true; do
-    read -pr "$1 [y/n]: " yn
+    read -rp"$1 [y/n]: " yn
     case $yn in
     [Yy]*)
       eval "$2='Y'"
