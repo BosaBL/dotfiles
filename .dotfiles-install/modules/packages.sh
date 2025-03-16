@@ -25,7 +25,7 @@ packages=(
   swww
   hyprpicker
   hyprshot
-  hypridle
+  swayidle
   kvantum
   network-manager-applet
   openssl
