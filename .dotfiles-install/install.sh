@@ -28,7 +28,7 @@ mkdir -p $HOME/Downloads/tmp
 ./modules/ngwlook.sh
 ./modules/themes.sh
 echo "Installing Fonts"
-./modules/fonts.sh
+./modules/nerdfonts.sh
 echo "Installing Dotfiles"
 ./modules/installdotfiles.sh
 echo "Dotfiles Installed"
