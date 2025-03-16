@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$DF_SCRIPT_DIR/helpers.sh"
+
 git clone --bare https://github.com/bosabl/dotfiles "$HOME/.cfg"
 function config {
   /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"

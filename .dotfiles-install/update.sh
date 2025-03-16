@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 while true; do
   read -rp "Updating dotfiles will overwrite any local change you have made. Do u want to continue? (y/n): " answer
   case $answer in
@@ -29,12 +31,3 @@ fi
 config checkout --force
 
 echo "Dotfiles updated"
-echo "Checking for new packages"
-
-source "$SCRIPT_DIR"/helpers.sh
-source "$SCRIPT_DIR"/modules/packages.sh
-source "$SCRIPT_DIR"/modules/sddm.sh
-source "$SCRIPT_DIR"/modules/multimedia.sh
-source "$SCRIPT_DIR"/modules/zsh.sh
-
-echo "Update finished"
