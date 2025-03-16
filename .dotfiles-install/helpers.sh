@@ -103,7 +103,7 @@ installPackage() {
 }
 
 removePackage() {
-  if yay -R --noconfirm "$1" 2>/dev/null; then
+  if yay -Rsc --noconfirm "$1" 2>/dev/null; then
     echo -e "${PKG_REMV_SUCCESS} Package $1 removed"
     log "[PKG_REMV_SUCCESS] Package $1 removed"
   else
@@ -128,9 +128,13 @@ removePackages() {
 
 yes_or_no() {
   while true; do
-    read -rp"$1 [y/n]: " yn
+    read -rp"$1 [Y/n]: " yn
     case $yn in
     [Yy]*)
+      eval "$2='Y'"
+      return 0
+      ;;
+    "")
       eval "$2='Y'"
       return 0
       ;;
