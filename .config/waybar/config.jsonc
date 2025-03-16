@@ -348,8 +348,7 @@
     "format": "{}",
     "rotate": 0,
     "exec": "echo ; echo  logout",
-    "on-click": "logoutlaunch.sh 2",
-    "on-click-right": "logoutlaunch.sh 1",
+    "on-click": "~/.config/hypr/scripts/Wlogout.sh",
     "interval": 86400, // once every day
     "tooltip": true,
   },
