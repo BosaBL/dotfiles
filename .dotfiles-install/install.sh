@@ -24,8 +24,6 @@ config checkout --force
 config config status.showUntrackedFiles no
 echo "Dotfiles Installed"
 
-source "$DF_SCRIPT_DIR/helpers.sh"
-
 export DF_SCRIPT_DIR="$HOME/.dotfiles-install"
 export DF_LOG_DIR="$HOME/.dotfiles-install/logs"
 export DF_TMP_DIR="/tmp/dotfiles-install"
@@ -37,6 +35,8 @@ mkdir -p "$TMP_DIR" && cd "$TMP_DIR" || exit 1
 
 chmod +x "$DF_SCRIPT_DIR"/helpers.sh
 chmod +x "$DF_SCRIPT_DIR"/modules/*
+
+source "$DF_SCRIPT_DIR/helpers.sh"
 
 nvidiaFlag=""
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
