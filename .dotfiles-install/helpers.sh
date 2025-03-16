@@ -93,7 +93,7 @@ installPackage() {
     return
   fi
 
-  if yay -S --noconfirm "$1" 2>/dev/null; then
+  if yay -S --needed --noconfirm "$1" 2>/dev/null; then
     echo -e "${PKG_INST_SUCCESS} Package $1 installed"
     log "[PKG_INST_SUCCESS] Package $1 installed"
   else
@@ -115,7 +115,7 @@ removePackage() {
 # params: Expanded list of packages to install i.e.: "${packageList[@]}" or "package1" "package2" ...
 installPackages() {
   local list=("$@")
-  yay -S --noconfirm "${list[@]}"
+  yay -S --needed --noconfirm "${list[@]}"
 }
 
 # params: Expanded list of packages to install i.e.: "${packageList[@]}" or "package1" "package2" ...
