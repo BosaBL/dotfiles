@@ -12,7 +12,7 @@ return {
 				"rafamadriz/friendly-snippets",
 				config = function(_, opts)
 					require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip/" } })
-					require("luasnip.loaders.from_vscode").lazy_load({ exclude = { "tex" } })
+					require("luasnip.loaders.from_vscode").lazy_load()
 				end,
 			},
 		},

@@ -28,6 +28,13 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.tex" },
 		{ import = "lazyvim.plugins.extras.lang.git" },
 		{ import = "lazyvim.plugins.extras.lang.sql" },
+		-- CODING
+		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
+		-- EDITOR
+		{ import = "lazyvim.plugins.extras.editor.illuminate" },
+		{ import = "lazyvim.plugins.extras.editor.refactoring" },
+		{ import = "lazyvim.plugins.extras.editor.navic" },
+		{ import = "lazyvim.plugins.extras.editor.inc-rename" },
 		-- UTILS
 		{ import = "lazyvim.plugins.extras.util.dot" },
 
