@@ -87,7 +87,7 @@ log() {
 }
 
 installPackage() {
-  if sudo dnf list installed "$1" &>/dev/null; then
+  if sudo dnf list --installed "$1" &>/dev/null; then
     echo -e "${PKG_ALREADY_INSTALLED} Package $1 is already installed"
     log "[PKG_ALREADY_INSTALLED] Package $1 is already installed"
     return
