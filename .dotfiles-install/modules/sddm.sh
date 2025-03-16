@@ -1,4 +1,4 @@
-packageInstall "sddm"
+installPackage "sddm"
 
 sudo cp -r sddm-astronaut-theme /usr/share/sddm/themes
 sudo cp ./sddm.conf /etc/
