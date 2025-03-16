@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+LOG_FILE="install-$(date +%d-%H%M%S).log"
+
 # Reset
 Color_Off='\033[0m' # Text Reset
 
