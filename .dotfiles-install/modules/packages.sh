@@ -61,6 +61,10 @@ packages=(
   haruna
   neovim
   rofi-wayland
+  ark
+  ffmpegthumbs
+  kio-gdrive
+  kdegraphics-thumbnailers
   brave-browser
 )
 
