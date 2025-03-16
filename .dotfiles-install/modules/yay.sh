@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-source "$DF_SCRIPT_DIR/helpers.sh"
 
 packages=(
   base-devel
   git
 )
 
-installPackages "${packages[@]}"
+sudo pacman -S --needed --no-confirm "${packages[@]}"
 
 cd "$DF_TMP_DIR" || exit
 
