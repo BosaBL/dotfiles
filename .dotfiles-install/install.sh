@@ -23,6 +23,7 @@ if [ "$nvidiaFlag" == "Y" ]; then
 fi
 
 source ./modules/packages.sh
+source ./modules/zsh.sh
 source ./modules/kdeconnect.sh
 source ./modules/sddm.sh
 source ./modules/multimedia.sh
@@ -33,8 +34,6 @@ mkdir -p $HOME/Downloads/tmp
 ./modules/themes.sh
 echo "Installing Fonts"
 ./modules/nerdfonts.sh
-echo "Installing zsh"
-./modules/zsh.sh
 echo "Installing Dotfiles"
 ./modules/installdotfiles.sh
 echo "Dotfiles Installed"
