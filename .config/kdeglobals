@@ -1,0 +1,9 @@
+[Icons]
+Theme=Tela-circle-blue-dark
+
+[KDE]
+ShowDeleteCommand=false
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
