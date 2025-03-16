@@ -34,7 +34,7 @@ config config status.showUntrackedFiles no
 echo "Dotfiles downloaded"
 
 # Main script to execute
-"$DF_SCRIPT_DIR"/install.sh
+"$DF_SCRIPT_DIR"/dotfiles.sh
 
 config checkout --force
 
