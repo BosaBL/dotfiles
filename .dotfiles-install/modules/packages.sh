@@ -58,6 +58,7 @@ packages=(
     dolphin
     okular
     xdg-desktop-portal-gtk
+    haruna
     neovim
     rofi-wayland
     brave-browser
