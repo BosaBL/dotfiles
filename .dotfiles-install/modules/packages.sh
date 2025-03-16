@@ -15,7 +15,7 @@ packages=(
   pipewire
   wireplumber
   xdg-desktop-portal-hyprland
-  polkit-kde
+  polkit-gnome
   qt5ct
   qt6ct
   qt6-qtsvg
