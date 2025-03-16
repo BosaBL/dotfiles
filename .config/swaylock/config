@@ -5,6 +5,7 @@ show-failed-attempts
 # CLOCK
 clock
 
+
 # INDICATOR
 indicator
 indicator-caps-lock
@@ -12,9 +13,9 @@ indicator-thickness=10
 indicator-radius=100
 
 # EFFECTS
-screenshot
+image=~/.cache/dotfiles/background
 effect-blur=5x2
-fade-in=1.0
+fade-in=0.5
 
 font=IBM Plex Sans
 
