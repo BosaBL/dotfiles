@@ -1,3 +1,5 @@
+#!/bin/bash
+
 installPackage "zsh"
 
 echo "Changing default shell to zsh"
