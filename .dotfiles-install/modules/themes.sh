@@ -5,7 +5,7 @@ if [ ! -d "$HOME"/.local/share/icons ]; then
 fi
 
 echo "Installing cursors"
-tar -xzvf "$SCRIPT_DIR"/assets/cursors.tar.gz -C "$HOME/.local/share/icons"
+tar -xzvf "$HOME"/.dotfiles-install/assets/cursors.tar.gz -C "$HOME/.local/share/icons"
 sudo cp -r "$HOME"/.local/share/icons/Bibata/ /usr/share/icons/
 
 git clone https://github.com/vinceliuice/Orchis-kde
