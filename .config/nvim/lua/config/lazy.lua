@@ -13,17 +13,23 @@ require("lazy").setup({
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
 		-- import/override with your plugins
-		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
+		-- CODING
+		{ import = "lazyvim.plugins.extras.coding.luasnip" },
 		-- LANGS
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.clangd" },
 		{ import = "lazyvim.plugins.extras.lang.docker" },
 		{ import = "lazyvim.plugins.extras.lang.sql" },
+		{ import = "lazyvim.plugins.extras.lang.tex" },
+		{ import = "lazyvim.plugins.extras.lang.git" },
+		{ import = "lazyvim.plugins.extras.lang.sql" },
+		-- UTILS
+		{ import = "lazyvim.plugins.util.dot" },
 
 		{ import = "plugins" },
 	},
