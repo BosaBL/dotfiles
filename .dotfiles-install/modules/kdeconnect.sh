@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packageInstall "kde-connect"
+installPackage "kde-connect"
 
 # Enable firewall rules
 echo "Enabling firewall rules for KDE Connect"
