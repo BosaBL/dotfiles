@@ -25,6 +25,7 @@ packages=(
   swww
   hyprpicker
   hyprshot
+  hypridle
   kvantum
   network-manager-applet
   openssl
@@ -67,6 +68,8 @@ packages=(
   ffmpegthumbs
   kio-gdrive
   kdegraphics-thumbnailers
+  ibm-plex-fonts-all
+  swaylock-effects
   brave-browser
 )
 

@@ -1,0 +1,57 @@
+# GENERAL
+ignore-empty-password
+show-failed-attempts
+
+# CLOCK
+clock
+
+# INDICATOR
+indicator
+indicator-caps-lock
+indicator-thickness=10
+indicator-radius=100
+
+# EFFECTS
+screenshot
+effect-blur=5x2
+fade-in=1.0
+
+font=IBM Plex Sans
+
+bs-hl-color=ff9e64
+caps-lock-bs-hl-color=ff9e64
+
+caps-lock-key-hl-color=bb9af7
+key-hl-color=bb9af7
+
+ring-wrong-color=f7768e
+ring-ver-color=9ece6a
+
+text-color=c0caf5
+text-clear-color=c0caf5
+text-caps-lock-color=c0caf5
+text-ver-color=c0caf5
+text-wrong-color=c0caf5
+
+inside-color=1a1b26E6
+inside-caps-lock-color=1a1b26E6
+inside-ver-color=1a1b26E6
+inside-clear-color=1a1b26E6
+inside-wrong-color=1a1b26E6
+
+line-uses-inside
+
+separator-color=565f89
+ring-color=565f89
+ring-clear-color=1d202f
+ring-caps-lock-color=565f89
+
+line-clear-color=1d202f
+line-caps-lock-color=f7768e
+line-ver-color=9ece6a
+
+text-color=c0caf5
+text-clear-color=c0caf5
+text-caps-lock-color=c0caf5
+text-ver-color=c0caf5
+
