@@ -8,7 +8,7 @@ chmod +x ./modules/*
 nvidiaFlag=""
 
 echo "Appending DNF Line"
-grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || sudo echo 'max_parallel_downloads=20' >> /etc/dnf/dnf.conf
+grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 
 # These need to be sourced since they are not standalone scripts
 source ./helpers.sh
