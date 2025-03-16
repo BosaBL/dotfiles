@@ -16,7 +16,7 @@ return {
 	config = function(_, opts)
 		LazyVim.mini.pairs(opts)
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "gitcommit", "latex", "tex" },
+			pattern = { "gitcommit", "tex" },
 			callback = function()
 				vim.b.minipairs_disable = true
 			end,
