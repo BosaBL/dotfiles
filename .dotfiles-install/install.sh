@@ -2,7 +2,29 @@
 
 trap 'exit 130' INT
 
-"$DF_SCRIPT_DIR"/modules/installdotfiles.sh
+git clone --bare https://github.com/bosabl/dotfiles "$HOME/.cfg"
+function config {
+  /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"
+}
+
+# Enable sparse checkout for no checking out certain files
+config core.sparsecheckout true
+
+# Do not checkout README.md
+echo README.md >>.git/info/sparse-checkout
+
+if ! config checkout; then
+  echo "Backing up pre-existing dot files."
+  mkdir -p .config-backup
+  config checkout 2>&1 | grep -E "\s+\." | awk '{print $1}' | xargs -I{} mv {} .config-backup/{}
+fi
+
+config checkout --force
+
+config config status.showUntrackedFiles no
+echo "Dotfiles Installed"
+
+source "$DF_SCRIPT_DIR/helpers.sh"
 
 export DF_SCRIPT_DIR="$HOME/.dotfiles-install"
 export DF_LOG_DIR="$HOME/.dotfiles-install/logs"
@@ -10,8 +32,8 @@ export DF_TMP_DIR="/tmp/dotfiles-install"
 DF_LOG_FILE="$DF_LOG_DIR/install-$(date +%d-%H%M%S).log"
 export DF_LOG_FILE
 
-touch DF_LOG_FILE || exit 1
-mkdir -p TMP_DIR && cd TMP_DIR || exit 1
+touch "$DF_LOG_FILE" || exit 1
+mkdir -p "$TMP_DIR" && cd "$TMP_DIR" || exit 1
 
 chmod +x "$DF_SCRIPT_DIR"/helpers.sh
 chmod +x "$DF_SCRIPT_DIR"/modules/*
