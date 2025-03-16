@@ -8,6 +8,7 @@ while true; do
 done
 
 if ! config pull; then
+  echo "Pulling config"
   config reset --hard HEAD
   config pull
 fi
@@ -27,6 +28,7 @@ fi
 echo "Dotfiles updated"
 echo "Checking for new packages"
 
+source ./helpers.sh
 source ./modules/packages.sh
 source ./modules/sddm.sh
 source ./modules/multimedia.sh
