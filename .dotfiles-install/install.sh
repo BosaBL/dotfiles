@@ -33,15 +33,15 @@ mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit
 
 # These need a new shell instance
-echo "Ngw-look"
-"$SCRIPT_DIR"/modules/ngwlook.sh
 echo "Installing Themes"
 "$SCRIPT_DIR"/modules/themes.sh
 echo "Installing Fonts"
 "$SCRIPT_DIR"/modules/nerdfonts.sh
 echo "Installing Dotfiles"
 "$SCRIPT_DIR"/modules/installdotfiles.sh
-echo "Dotfiles Installed"
+
+echo "Installing Ngw-look"
+"$SCRIPT_DIR"/modules/ngwlook.sh
 
 cd "$HOME" || exit
 rm -rfd "$TMP_DIR"
