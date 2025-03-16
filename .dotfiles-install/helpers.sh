@@ -83,20 +83,13 @@ PKG_REMV_ERROR="${BIRed}[PKG_REMV_ERROR]${Color_Off}"
 PKG_REMV_SUCCESS="${BIGreen}[PKG_REMV_SUCCESS]${Color_Off}"
 
 log() {
-  echo $1 >>$LOG_FILE
+  echo "$1" >>"$LOG_FILE"
 }
 
 installPackage() {
   if sudo dnf list installed "$1" &>/dev/null; then
     echo -e "${PKG_ALREADY_INSTALLED} Package $1 is already installed"
     log "[PKG_ALREADY_INSTALLED] Package $1 is already installed"
-    return
-  fi
-
-  # If the package is not available or is not a url,
-  if ! (sudo dnf list available "$1" &>/dev/null); then
-    echo -e "${PKG_NOT_FOUND} Package $1 not found"
-    log "[PKG_NOT_FOUND] Package $1 not found"
     return
   fi
 
@@ -110,12 +103,6 @@ installPackage() {
 }
 
 removePackage() {
-  if ! sudo dnf list installed "$1" &>/dev/null; then
-    echo -e "${PKG_ALREADY_INSTALLED} Package $1 is not installed"
-    log "{PKG_ALREADY_INSTALLED} Package $1 is not installed"
-    return
-  fi
-
   if sudo dnf remove "$1" -y 2>/dev/null; then
     echo -e "${PKG_REMV_SUCCESS} Package $1 removed"
     log "[PKG_REMV_SUCCESS] Package $1 removed"
