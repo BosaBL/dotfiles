@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/Downloads/tmp
-
 git clone https://github.com/nwg-piotr/nwg-look.git
-cd nwg-look
+cd nwg-look || exit
 make build
 sudo make install

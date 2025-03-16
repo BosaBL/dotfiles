@@ -291,11 +291,12 @@
   "clock": {
     "interval": 1,
     "format": " {:%H:%M:%S}", // 24H
-    "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+    "format-alt": " {:%H:%M:%S   %Y, %d %B, %A}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
-      "mode-mon-col": 4,
+      "mode-mon-col": 3,
+      "on-scroll": 1,
       "format": {
         "months": "<span color='#ffead3'><b>{}</b></span>",
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
@@ -303,6 +304,24 @@
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
       },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+  "custom/updates": {
+    "exec": "bash $HOME/.config/waybar/scripts/checkupdates.sh", // <--- path to script
+    "on-click-right": "bash $HOME/.config/waybar/scripts/checkupdates.sh", // refresh on right click
+    "on-click-middle": "swaymsg exec '$term -e sudo dnf update'", // update on middle click
+    "interval": 900, // refresh every 15 minutes
+    "return-type": "json",
+    "format": "{icon}",
+    "format-alt": "{icon} {}",
+    "format-icons": {
+      "has-updates": "", // icon when updates needed
+      "updated": "", // icon when all packages updated
     },
   },
   "actions": {
@@ -406,8 +425,9 @@
     "on-click-right": "alacritty --title -e btop sh -c 'btop'",
   },
   "mpris": {
-    "format": "{status_icon} {dynamic}",
-    "format-paused": "{status_icon} {dynamic}",
+    "interval": 1,
+    "format": "{status_icon} {title} ({position}/{length})",
+    "format-paused": "{status_icon} {title} ({position}/{length})",
     "on-click-middle": "playerctl play-pause",
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
@@ -418,7 +438,7 @@
       "playing": "",
       "stopped": "",
     },
-    "max-length": 30,
+    "title-len": 30,
   },
   "network": {
     "format": "{ifname}",

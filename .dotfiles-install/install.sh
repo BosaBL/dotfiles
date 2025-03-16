@@ -1,25 +1,21 @@
 #!/usr/bin/env bash
 
 LOG_FILE="install-$(date +%d-%H%M%S).log"
-
+TMP_DIR="$HOME/Downloads/tmp"
 chmod +x ./helpers.sh
 chmod +x ./modules/*
 
 nvidiaFlag=""
-
-echo "Appending DNF Line"
-grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf > /dev/null
-
-# These need to be sourced since they are not standalone scripts
-source ./helpers.sh
-
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 
-# These need to be sourced since they are not standalone scripts
+echo "Appending DNF parallel downloads"
+grep -qxF 'max_parallel_downloads=20' /etc/dnf/dnf.conf || echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf >/dev/null
+
+source ./helpers.sh
 source ./modules/rpmfusion-copr.sh
 
 if [ "$nvidiaFlag" == "Y" ]; then
-    source ./modules/nvidia.sh
+  source ./modules/nvidia.sh
 fi
 
 source ./modules/packages.sh
@@ -27,9 +23,10 @@ source ./modules/kdeconnect.sh
 source ./modules/sddm.sh
 source ./modules/multimedia.sh
 
-mkdir -p $HOME/Downloads/tmp
+mkdir -p "$TMP_DIR"
+cd "$TMP_DIR" || exit
 
-# These just need to be executed, they are standalone script
+# These need a new shell instance
 echo "Ngw-look"
 ./modules/ngwlook.sh
 echo "Installing ZSH"
@@ -41,6 +38,7 @@ echo "Installing Fonts"
 echo "Installing Dotfiles"
 ./modules/installdotfiles.sh
 echo "Dotfiles Installed"
-echo "Cleaning up"
 
-rm -rfd $HOME/Downloads/tmp
+cd "$HOME" || exit
+rm -rfd "$TMP_DIR"
+echo "Cleaning up"
