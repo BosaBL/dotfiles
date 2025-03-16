@@ -20,7 +20,7 @@ bluetoothFlag=""
 networkManager=""
 
 yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
-yes_or_no "Do you want to enable Bluetooth support?" nvidiaFlag
+yes_or_no "Do you want to enable Bluetooth support?" bluetoothFlag
 yes_or_no "Do you want to swap systemd-networkd for NetworkManager" networkManager
 
 mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
