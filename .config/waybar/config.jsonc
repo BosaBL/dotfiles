@@ -15,11 +15,9 @@
   "margin-left": 6,
   "margin-right": 6,
 
-  "modules-left": ["custom/menu", "hyprland/workspaces"],
+  "modules-left": ["custom/menu", "hyprland/workspaces", "mpris"],
   "modules-center": ["clock", "idle_inhibitor"],
   "modules-right": [
-    "network#speed",
-    "mpris",
     "group/audio",
     "custom/swaync",
     "custom/update",
