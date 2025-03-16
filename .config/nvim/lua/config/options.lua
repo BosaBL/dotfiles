@@ -6,4 +6,3 @@
 vim.g.maplocalleader = " "
 
 -- Disable comment continuation
-vim.opt_local.formatoptions:remove({ "r", "o" })
