@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 git clone https://github.com/vinceliuice/Orchis-kde
 git clone https://github.com/vinceliuice/Orchis-theme

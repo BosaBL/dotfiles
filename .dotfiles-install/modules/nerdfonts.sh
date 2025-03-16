@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 mkdir -p $HOME/Downloads/tmp
 cd $HOME/Downloads/tmp
 

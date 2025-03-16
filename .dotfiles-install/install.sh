@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 LOG_FILE="install-$(date +%d-%H%M%S).log"
 
