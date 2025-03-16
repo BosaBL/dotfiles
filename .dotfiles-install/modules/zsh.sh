@@ -2,8 +2,6 @@
 
 source "$DF_SCRIPT_DIR/helpers.sh"
 
-sudo dnf -y install "zsh"
-
 # oh-my-zsh
 if [ ! -d "$HOME"/.oh-my-zsh/ ]; then
   echo "Installing oh-my-zsh"
