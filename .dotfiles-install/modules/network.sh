@@ -1,7 +1,8 @@
 source "$DF_SCRIPT_DIR/helpers.sh"
 
 packages=(
-  NetworkManager
+  networkmanager
+  network-manager-applet
 )
 
 installPackages "${packages[@]}"
