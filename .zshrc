@@ -4,7 +4,31 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/chris/.local/bin
+path+=(
+  "$HOME/.local/bin"
+ )
+
+export PATH
+#     HTTPS_CA_FILE=/opt/texlive-installer/tlpkg/installer/curl/curl-ca-bundle.crt
+#     SUDO_COMMAND=/opt/texlive-installer/install-tl
+#     TEXLIVE_INSTALL_NO_DISKCHECK=1
+#  ----------------------------------------------------------------------
+# Welcome to TeX Live!
+# See /usr/local/texlive/2024/index.html for links to documentation.
+#
+# The TeX Live web site (https://tug.org/texlive/) provides all updates
+# and corrections. TeX Live is a joint project of the TeX user groups
+# around the world; please consider supporting it by joining the group
+# best for you. The list of groups is available on the web
+# at https://tug.org/usergroups.html.
+#
+# Add /usr/local/texlive/2024/texmf-dist/doc/man to MANPATH.
+# Add /usr/local/texlive/2024/texmf-dist/doc/info to INFOPATH.
+# Most importantly, add /usr/local/texlive/2024/bin/x86_64-linux
+# to your PATH for current and future sessions.
+#
+# Logfile: /usr/local/texlive/2024/install-tl.log
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
