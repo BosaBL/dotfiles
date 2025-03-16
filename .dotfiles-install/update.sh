@@ -28,5 +28,8 @@ echo "Dotfiles updated"
 echo "Checking for new packages"
 
 source ./modules/packages.sh
+source ./modules/sddm.sh
+source ./modules/multimedia.sh
+source ./modules/zsh.sh
 
 echo "Update finished"
