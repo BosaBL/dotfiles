@@ -16,18 +16,22 @@ chmod +x "$DF_SCRIPT_DIR"/modules/*
 source "$DF_SCRIPT_DIR/helpers.sh"
 
 nvidiaFlag=""
-yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 bluetoothFlag=""
+networkManager=""
+
+yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 yes_or_no "Do you want to enable Bluetooth support?" nvidiaFlag
+yes_or_no "Do you want to swap systemd-networkd for NetworkManager" networkManager
 
 mkdir -p "$HOME"/{Documents/{,University},Projects,Playground} || exit 1
 
 if [ "$nvidiaFlag" == "Y" ]; then
   "$DF_SCRIPT_DIR"/modules/nvidia.sh
 fi
-
 "$DF_SCRIPT_DIR"/modules/packages.sh
-"$DF_SCRIPT_DIR"/modules/network.sh
+if [ "$networkManager" == "Y" ]; then
+  "$DF_SCRIPT_DIR"/modules/network.sh
+fi
 "$DF_SCRIPT_DIR"/modules/fonts.sh
 "$DF_SCRIPT_DIR"/modules/sddm.sh
 "$DF_SCRIPT_DIR"/modules/multimedia.sh
