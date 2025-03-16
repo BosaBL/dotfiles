@@ -5,7 +5,7 @@ packages=(
   git
 )
 
-sudo pacman -S --needed --no-confirm "${packages[@]}"
+sudo pacman -S --needed --noconfirm "${packages[@]}"
 
 cd "$DF_TMP_DIR" || exit
 
