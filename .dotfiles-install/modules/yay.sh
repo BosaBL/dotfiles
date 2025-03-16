@@ -11,4 +11,4 @@ cd "$DF_TMP_DIR" || exit
 
 git clone https://aur.archlinux.org/yay.git
 cd yay || exit
-makepkg -si
+makepkg -si --noconfirm
