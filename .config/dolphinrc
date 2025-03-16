@@ -8,7 +8,7 @@ Version=202
 ViewPropsTimestamp=2024,9,12,19,1,18.826
 
 [IconsMode]
-PreviewSize=32
+PreviewSize=80
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -20,3 +20,6 @@ ToolBarsMovable=Disabled
 
 [PreviewSettings]
 Plugins=audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail
+
+[Search]
+Location=Everywhere
