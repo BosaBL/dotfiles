@@ -29,7 +29,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.git" },
 		{ import = "lazyvim.plugins.extras.lang.sql" },
 		-- UTILS
-		{ import = "lazyvim.plugins.utils.dot" },
+		{ import = "lazyvim.plugins.extras.util.dot" },
 
 		{ import = "plugins" },
 	},
