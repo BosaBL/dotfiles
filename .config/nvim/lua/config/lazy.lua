@@ -31,6 +31,7 @@ require("lazy").setup({
 		-- CODING
 		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
 		-- EDITOR
+		{ import = "lazyvim.plugins.extras.editor.neo-tree" },
 		{ import = "lazyvim.plugins.extras.editor.illuminate" },
 		{ import = "lazyvim.plugins.extras.editor.refactoring" },
 		{ import = "lazyvim.plugins.extras.editor.navic" },
