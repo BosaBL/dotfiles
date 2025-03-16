@@ -102,8 +102,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-autoload -Uz compinit && compinit
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 plugins=(vi-mode fzf-tab git zsh-autosuggestions zsh-syntax-highlighting sudo python copypath copyfile gitignore aliases)
+
+autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -149,8 +151,8 @@ setopt completealiases
 # History bindings
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
-bindkey -e
-bindkey -v
+bindkey '^f' autosuggest-accept
+
 
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -169,10 +171,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-
-# STYLING
-
 
 # INTEGRATIONS
 eval "$(fzf --zsh)"
