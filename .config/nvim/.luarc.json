@@ -1,5 +1,10 @@
 {
     "diagnostics.globals": [
-        "LazyVim"
+        "LazyVim",
+        "get_visual"
+    ],
+    "diagnostics.disable": [
+        "unused-local",
+        "lowercase-global"
     ]
 }
