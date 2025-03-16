@@ -2,7 +2,7 @@
 
 cd $HOME/Downloads/tmp
 
-git clone --bare https://bitbucket.org/durdn/cfg.git $HOME/.cfg
+git clone --bare https://github.com/bosabl/dotfiles $HOME/.cfg
 function config {
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
@@ -14,5 +14,5 @@ else
     echo "Backing up pre-existing dot files.";
     config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 fi;
-config checkout
+config checkout --force
 config config status.showUntrackedFiles no
