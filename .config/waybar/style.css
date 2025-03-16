@@ -5,7 +5,7 @@
 /* --- 👍 designed by https://github.com/CelestiaKai  👍 --- */
 
 * {
-  font-family: "JetBrains Mono Nerd Font";
+  font-family: "JetBrains Mono Nerd Font", monospace;
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
   font-size: 100%;
   font-weight: bold;
@@ -135,6 +135,7 @@ tooltip {
 #power-profiles-daemon,
 #pulseaudio,
 #pulseaudio-slider,
+#pulseaudio-michrophone,
 #taskbar,
 #temperature,
 #tray,
@@ -163,13 +164,15 @@ tooltip {
 #custom-weather.severe,
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
+#custom-updates,
 #custom-weather.sunnyDay {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
   color: #c0caf5;
 }
 
-#mpris {
+#mpris,
+#custom-updates {
   color: #bb9af7;
 }
 

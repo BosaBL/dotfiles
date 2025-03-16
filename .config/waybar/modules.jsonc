@@ -312,15 +312,15 @@
     },
   },
   "custom/updates": {
-    "exec": "bash $HOME/.config/waybar/scripts/checkupdates.sh", // <--- path to script
-    "on-click-right": "bash $HOME/.config/waybar/scripts/checkupdates.sh", // refresh on right click
-    "on-click-middle": "swaymsg exec '$term -e sudo dnf update'", // update on middle click
+    "exec": "$HOME/.config/hypr/scripts/checkupdates.sh", // <--- path to script
+    "on-click-right": "$HOME/.config/hypr/scripts/checkupdates.sh", // refresh on right click
+    "on-click-middle": "hyprctl dispatch exec kitty sudo dnf update", // update on middle click
     "interval": 900, // refresh every 15 minutes
     "return-type": "json",
     "format": "{icon}",
-    "format-alt": "{icon} {}",
+    "format-alt": "{icon}{}",
     "format-icons": {
-      "has-updates": "", // icon when updates needed
+      "has-updates": " ", // icon when updates needed
       "updated": "", // icon when all packages updated
     },
   },
@@ -481,12 +481,12 @@
     },
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}{volume}%",
     "format-bluetooth": "{icon} 󰂰 {volume}%",
-    "format-muted": "󰖁",
+    "format-muted": " ",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
+      "headphone": " ",
+      "hands-free": " ",
       "headset": "",
       "phone": "",
       "portable": "",
@@ -506,15 +506,15 @@
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}%",
     "format-bluetooth-muted": " {icon}",
-    "format-muted": "󰸈",
+    "format-muted": " ",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
+      "headphone": " ",
+      "hands-free": "  ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", " ", " "],
     },
     "on-click": "pamixer --toggle-mute",
     "on-click-right": "pavucontrol -t 3",
@@ -522,8 +522,8 @@
     "tooltip-format": "{icon} {desc} | {volume}%",
   },
   "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
+    "format": "{format_source} ",
+    "format-source": "{volume}%",
     "format-source-muted": "",
     "on-click": "~/.config/hypr/scripts/Volume.sh --toggle-mic",
     "on-click-right": "pavucontrol -t 4",

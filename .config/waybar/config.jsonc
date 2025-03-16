@@ -18,11 +18,12 @@
   "modules-left": ["custom/menu", "hyprland/workspaces"],
   "modules-center": ["clock", "mpris"],
   "modules-right": [
-    "custom/separator#blank_2",
     "group/audio",
     "custom/swaync",
     "custom/update",
     "tray",
+    "custom/updates",
+    "battery",
     "custom/power",
   ],
 }
