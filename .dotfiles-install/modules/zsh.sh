@@ -32,7 +32,7 @@ if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighti
 fi
 
 # if current user's shell isn't zsh, use it
-if [ -n "$(rg -o "$USER"':/usr/bin/zsh' <'/etc/passwd')" ]; then
+if [ -z "$(rg -o "$USER"':/usr/bin/zsh' <'/etc/passwd')" ]; then
   echo "Changing default shell to zsh"
   chsh -s "$(which zsh)"
 fi
