@@ -21,9 +21,11 @@ function config {
   /usr/bin/git "--git-dir=$HOME/.cfg/" "--work-tree=$HOME" "$@"
 }
 # Enable sparse checkout for no checking out certain files
-config core.sparsecheckout true
+config config core.sparsecheckout true
+
 # Do not checkout README.md
 echo README.md >>.git/info/sparse-checkout
+
 if ! config checkout; then
   echo "Backing up pre-existing dot files."
   mkdir -p .config-backup
