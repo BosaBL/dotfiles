@@ -14,7 +14,6 @@ packages=(
     pipewire
     wireplumber
     xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
     polkit-kde
     qt5ct
     qt6ct
@@ -40,7 +39,7 @@ packages=(
     SwayNotificationCenter
     aylurs-gtk-shell
     nvtop
-    texlive-scheme-full
+    # texlive-scheme-full
     bat
     fzf
     zoxide
@@ -54,16 +53,15 @@ packages=(
     gnome-themes-extra
     gtk-murrine-engine
     sassc
-    kwallet
-    pam-kwallet
     dolphin
     okular
+    # xdg-desktop-portal-gtk
+    neovim
     brave-browser
+    pam-kwallet
+    rofi-wayland
 )
 
-sudo dnf -y install dnf-plugins-core
-sudo dnf -y config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 installPackages "${packages[@]}"
 

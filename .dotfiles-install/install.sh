@@ -7,6 +7,9 @@ chmod +x ./modules/*
 
 nvidiaFlag=""
 
+echo "Appending DNF Line"
+echo "max_parallel_downloads=20" >> /etc/dnf/dnf.conf
+
 # These need to be sourced since they are not standalone scripts
 source ./helpers.sh
 
@@ -15,12 +18,13 @@ yes_or_no "Do you want to install Nvidia drivers?" nvidiaFlag
 # These need to be sourced since they are not standalone scripts
 source ./modules/rpmfusion-copr.sh
 
-if ["$nvidiaFlag" == "Y"]; then
+if [ "$nvidiaFlag" == "Y" ]; then
     source ./modules/nvidia.sh
 fi
 
 source ./modules/packages.sh
 source ./modules/kdeconnect.sh
+source ./modules/sddm.sh
 source ./modules/multimedia.sh
 
 mkdir -p $HOME/Downloads/tmp
@@ -29,6 +33,8 @@ mkdir -p $HOME/Downloads/tmp
 ./modules/themes.sh
 echo "Installing Fonts"
 ./modules/nerdfonts.sh
+echo "Installing zsh"
+./modules/zsh.sh
 echo "Installing Dotfiles"
 ./modules/installdotfiles.sh
 echo "Dotfiles Installed"
