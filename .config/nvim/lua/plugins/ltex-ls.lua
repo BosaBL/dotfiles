@@ -5,24 +5,28 @@ for word in io.lines(dictionary_file_path) do
 end
 
 return {
-	-- "neovim/nvim-lspconfig",
-	-- opts = {
-	-- 	servers = {
-	-- 		ltex = {
-	-- 			settings = {
-	-- 				-- https://valentjn.github.io/ltex/settings.html
-	-- 				ltex = {
-	-- 					dictionary = {
-	-- 						["es"] = words,
-	-- 					},
-	-- 					language = "es",
-	-- 					additionalRules = {
-	-- 						enablePickyRules = true,
-	-- 						motherTongue = "es",
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
+	"neovim/nvim-lspconfig",
+	opts = {
+		servers = {
+			ltex = {
+				settings = {
+					-- https://valentjn.github.io/ltex/settings.html
+					ltex = {
+						dictionary = {
+							["es"] = words,
+						},
+						language = "es",
+						latex = {
+							commands = "ignore",
+							enviroments = "ignore",
+						},
+						additionalRules = {
+							enablePickyRules = true,
+							motherTongue = "es",
+						},
+					},
+				},
+			},
+		},
+	},
 }
