@@ -7,4 +7,9 @@ packages=(
 
 installPackages "${packages[@]}"
 
+# Enable NetworkManager service
 sudo systemctl enable --now NetworkManager
+
+# Disable systemd-networkd
+sudo systemctl stop NetworkManager.service
+sudo systemctl disable NetworkManager.service

@@ -84,6 +84,8 @@ packages=(
   bat
   zoxide
   eza
+  man
+  fd
 )
 
 installPackages "${packages[@]}"
