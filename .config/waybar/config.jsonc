@@ -158,9 +158,10 @@
     "tooltip-format-deactivated": "Caffeine Mode Inactive",
   },
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format": "{:%R 󰃭 %d·%m·%y}",
     "rotate": 0,
-    "format-alt": "{:%R 󰃭 %d·%m·%y}",
+    "interval": 1,
+    "format-alt": "{:%R:%S 󰃭 %d·%m·%y}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
