@@ -127,8 +127,23 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-plugins=(vi-mode fzf-tab git zsh-autosuggestions zsh-syntax-highlighting sudo python copypath copyfile gitignore aliases)
-
+plugins=(
+  vi-mode
+  zoxide
+  virtualenvwrapper
+  uv
+  fzf-tab
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  sudo
+  python
+  copypath
+  copyfile
+  gitignore
+  aliases
+)
+export ZOXIDE_CMD_OVERRIDE=cd
 autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -191,14 +206,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons=always --colour
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# INTEGRATIONS
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 
 # THEME
 export BAT_THEME=tokyonight_night
+
