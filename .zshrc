@@ -210,3 +210,11 @@ function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$
 # THEME
 export BAT_THEME=tokyonight_night
 
+
+# pnpm
+export PNPM_HOME="/home/chris/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
