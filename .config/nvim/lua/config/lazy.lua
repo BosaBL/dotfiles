@@ -30,6 +30,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.sql" },
 		-- CODING
 		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
+		{ import = "lazyvim.plugins.extras.coding.neogen" },
 		-- EDITOR
 		{ import = "lazyvim.plugins.extras.editor.neo-tree" },
 		{ import = "lazyvim.plugins.extras.editor.illuminate" },

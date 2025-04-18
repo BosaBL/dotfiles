@@ -1,6 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.leap"
+    "lazyvim.plugins.extras.ai.codeium",
+    "lazyvim.plugins.extras.coding.neogen"
   ],
   "install_version": 8,
   "news": {
