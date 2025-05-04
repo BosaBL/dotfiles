@@ -27,7 +27,6 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.sql" },
 		{ import = "lazyvim.plugins.extras.lang.tex" },
 		{ import = "lazyvim.plugins.extras.lang.git" },
-		{ import = "lazyvim.plugins.extras.lang.sql" },
 		-- CODING
 		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
 		{ import = "lazyvim.plugins.extras.coding.neogen" },
