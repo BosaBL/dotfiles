@@ -10,3 +10,5 @@ vim.g.ai_cmp = false
 
 -- vim.g.lazyvim_picker = "snacks"
 vim.g.root_spec = { "cwd" }
+
+vim.g.lazyvim_python_lsp = "basedpyright"

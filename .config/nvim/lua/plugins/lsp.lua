@@ -2,9 +2,9 @@ return {
 	"neovim/nvim-lspconfig",
 	opts = {
 		servers = {
-			pyright = {
+			basedpyright = {
 				settings = {
-					pyright = {
+					basedpyright = {
 						analysis = {
 							autoSearchPaths = true,
 							diagnosticMode = "workspace",
