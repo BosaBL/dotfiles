@@ -3,11 +3,19 @@ return {
 		"lervag/vimtex",
 		lazy = false, -- lazy-loading will disable inverse search
 		config = function()
+			os_name = require("utils.get_os").get_os()
+
 			vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
 			vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
 
 			-- Vimtex configuration
-			vim.g["vimtex_view_method"] = "zathura"
+			if os_name ~= "windows" then
+				vim.g["vimtex_view_method"] = "zathura"
+			else
+				vim.g.vimtex_view_general_viewer = "SumatraPDF"
+				vim.g.vimtex_view_general_options = [[-reuse-instance -forward-search @tex @line @pdf]]
+			end
+
 			vim.g["vimtex_quickfix_open_on_warning"] = 0
 			vim.g["vimtex_indent_enabled"] = 0
 			vim.g["vimtex_compiler_method"] = "latexmk"

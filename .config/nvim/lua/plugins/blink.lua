@@ -6,7 +6,13 @@ return {
 			["<C-k>"] = { "select_prev", "fallback_to_mappings" },
 			["<C-j>"] = { "select_next", "fallback_to_mappings" },
 		},
+		signature = { enabled = true },
 		completion = {
+			accept = {
+				auto_brackets = {
+					enabled = false,
+				},
+			},
 			list = {
 				selection = {
 					preselect = function(ctx)
