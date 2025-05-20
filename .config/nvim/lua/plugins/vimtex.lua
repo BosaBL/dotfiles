@@ -16,7 +16,6 @@ return {
 				vim.g.vimtex_view_general_options = [[-reuse-instance -forward-search @tex @line @pdf]]
 			end
 
-			vim.g.vimtex_view_forward_search_on_start = 0
 			vim.g.vimtex_quickfix_open_on_warning = 0
 			vim.g.vimtex_indent_enabled = 0
 			vim.g.vimtex_compiler_method = "latexmk"
