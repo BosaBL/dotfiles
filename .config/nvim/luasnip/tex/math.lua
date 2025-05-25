@@ -1,4 +1,4 @@
-local helpers = require("helpers.funcs")
+local helpers = require("utils.luansip_helpers")
 
 -- Math context detection
 local tex = {}

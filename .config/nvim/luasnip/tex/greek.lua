@@ -1,4 +1,5 @@
-local helpers = require("helpers.funcs")
+local helpers = require("utils.luansip_helpers")
+
 local tex = {}
 tex.in_mathzone = function()
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1

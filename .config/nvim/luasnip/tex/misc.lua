@@ -1,4 +1,4 @@
-local helpers = require("helpers.funcs")
+local helpers = require("utils.luansip_helpers")
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 -- Math context detection

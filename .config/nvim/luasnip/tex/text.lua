@@ -1,4 +1,4 @@
-local helpers = require("helpers.funcs")
+local helpers = require("utils.luansip_helpers")
 
 -- A logical OR of `line_begin` and the regTrig '[^%a]trig'
 function line_begin_or_non_letter(line_to_cursor, matched_trigger)
