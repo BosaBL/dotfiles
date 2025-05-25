@@ -1,7 +1,7 @@
 return {
   {
     "folke/ts-comments.nvim",
-    disable = true,
+    enabled = false,
   },
   {
     "numToStr/Comment.nvim",
