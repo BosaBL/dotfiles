@@ -29,3 +29,13 @@ vim.g.lazyvim_eslint_auto_format = true
 if os_name == "windows" then
   LazyVim.terminal.setup("pwsh")
 end
+
+vim.filetype.add({
+  pattern = { [".*%.html"] = "html" },
+})
+
+vim.filetype.add({
+  extension = {
+    html = "htmldjango",
+  },
+})
