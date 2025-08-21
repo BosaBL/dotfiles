@@ -3,6 +3,10 @@ local auto_format = vim.g.lazyvim_eslint_auto_format == nil or vim.g.lazyvim_esl
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    diagnostics = {
+      virtual_text = false,
+      signs = false,
+    },
     servers = {
       pyright = {
         settings = {
