@@ -31,11 +31,7 @@ if os_name == "windows" then
 end
 
 vim.filetype.add({
-  pattern = { [".*%.html"] = "html" },
-})
-
-vim.filetype.add({
-  extension = {
-    html = "htmldjango",
+  pattern = {
+    [".*/templates/.*%.html"] = "htmldjango", -- Match templates folder
   },
 })
