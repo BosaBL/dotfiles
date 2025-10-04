@@ -11,6 +11,7 @@ opt.colorcolumn = "80"
 -- Leader remaps
 vim.g.maplocalleader = " "
 vim.g.lazyvim_eslint_auto_format = true
+vim.g.lazyvim_python_lsp = "basedpyright"
 
 -- setup pwsh if on windows.
 if os_name == "windows" then
