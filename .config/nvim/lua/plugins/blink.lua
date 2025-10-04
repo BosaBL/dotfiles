@@ -5,8 +5,8 @@ return {
       preset = "enter",
       ["<C-y>"] = { "select_and_accept" },
 
-      ["<C-j>"] = { "select_next", "fallback" },
-      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<C-j>"] = { "select_next" },
+      ["<C-k>"] = { "select_prev" },
     },
   },
 }
