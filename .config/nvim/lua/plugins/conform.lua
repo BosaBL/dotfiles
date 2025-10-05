@@ -4,6 +4,8 @@ return {
     opts = {
       formatters_by_ft = {
         python = { "ruff_organize_imports", "ruff_fix", lsp_format = "last" },
+        html = { "djlint" },
+        htmldjango = { "djlint" },
       },
     },
   },
