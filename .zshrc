@@ -46,8 +46,8 @@ plugins=(
   zsh-autosuggestions
 )
 
-eval "$(uv generate-shell-completion zsh)"
 export ZOXIDE_CMD_OVERRIDE=cd
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -107,4 +107,15 @@ bindkey '^j' history-search-forward
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PNPM_HOME="/home/chris/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+eval "$(uv generate-shell-completion zsh)"
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export GDK_BACKEND=x11
+export QT_QPA_PLATFORM=xcb
+export SDL_VIDEODRIVER=x11
