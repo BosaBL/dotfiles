@@ -67,4 +67,15 @@ return {
       },
     },
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      local lspconfig = require("lspconfig")
+      local util = require("lspconfig.util")
+
+      opts.servers.texlab.root_dir = util.root_pattern(".texlabroot", ".latexmkrc", ".git")()
+
+      return opts
+    end,
+  },
 }
