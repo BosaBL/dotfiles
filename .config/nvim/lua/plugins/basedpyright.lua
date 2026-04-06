@@ -6,10 +6,9 @@ return {
         settings = {
           basedpyright = {
             analysis = {
-              autoSearchPaths = true,
               diagnosticMode = "workspace",
-              useLibraryCodeForTypes = true,
               typeCheckingMode = "basic",
+              autoImportCompletions = true,
             },
           },
         },

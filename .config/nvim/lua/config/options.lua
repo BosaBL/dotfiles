@@ -23,3 +23,5 @@ vim.filetype.add({
     [".*/templates/.*%.html"] = "htmldjango", -- Match templates folder
   },
 })
+
+vim.g.lazyvim_ts_lsp = "tsgo"
