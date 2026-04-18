@@ -31,7 +31,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   vi-mode
   zoxide
-  virtualenvwrapper
+  autoswitch_virtualenv
   git
   sudo
   copypath
@@ -104,21 +104,18 @@ bindkey '^j' history-search-forward
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-eval "$(uv generate-shell-completion zsh)"
 
 export GDK_BACKEND=x11
 export QT_QPA_PLATFORM=xcb
 export SDL_VIDEODRIVER=x11
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [ ! -f "$SSH_AUTH_SOCK" ]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
+# pnpm
+export PNPM_HOME="/home/chris/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+eval "$(uv generate-shell-completion zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
