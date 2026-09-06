@@ -742,3 +742,15 @@ cht() {
     print -r -- "$response"
   fi
 }
+
+if (( $+commands[wslview] )); then
+  alias open="wslview"
+elif (( $+commands[explorer.exe] )); then
+  open() {
+    if [[ -z "$1" ]]; then
+      explorer.exe .
+    else
+      explorer.exe "$1"
+    fi
+  }
+fi
