@@ -1,7 +1,7 @@
 return {
   {
     "folke/tokyonight.nvim",
-    enabled = false,
+    enabled = true,
     opts = {
       transparent = true,
       styles = {
@@ -13,30 +13,5 @@ return {
   {
     "catppuccin/nvim",
     enabled = false,
-  },
-  {
-    "thesimonho/kanagawa-paper.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      colors = {
-        theme = {
-          ink = {
-            ui = {
-              float = {
-                bg = "none",
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "kanagawa-paper-ink",
-    },
   },
 }

@@ -11,7 +11,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 path=(
   "$HOME/.local/bin"
   "$HOME/.cargo/bin"
-  "$PNPM_HOME"
+  "$PNPM_HOME/bin"
   $path
 )
 
@@ -206,3 +206,6 @@ fi
 
 # P10k Theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by Antigravity CLI installer
+export PATH="/home/chris/.local/bin:$PATH"
